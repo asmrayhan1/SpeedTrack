@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:speed_track/screen/create.dart';
 import 'package:speed_track/screen/read.dart';
+import 'package:speed_track/screen/update.dart';
 import 'package:speed_track/view_model/car_controller.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
@@ -114,7 +115,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                                   children: [
                                     GestureDetector(
                                       onTap: (){
-                                        //Navigator.push(context, MaterialPageRoute(builder: (context) => Update()));
+                                        Navigator.push(context, MaterialPageRoute(builder: (context) => Update(index: index)));
                                       },
                                       child: Icon(Icons.edit, color: Colors.white,),
                                     ),

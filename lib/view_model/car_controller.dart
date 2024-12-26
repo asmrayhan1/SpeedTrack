@@ -36,10 +36,8 @@ class CarController extends StateNotifier<CarGeneric> {
 
   Future<void> updateRecordByKey(int index, Map<String, dynamic> updatedData) async {
     final db = await DatabaseHelper.getDatabase();
-
-    state.carList[index] = Pair<int, CarModel>(state.carList[index].first, CarModel.fromJson(updatedData));
-
     await _store.record(state.carList[index].first).update(db, updatedData);  // Update record by key
+    await getAllData();
   }
 
   Future<void> deleteRecordByKey(int key) async {
